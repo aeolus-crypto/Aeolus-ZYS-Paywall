@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{productName}}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 2.5rem; width: 100%; max-width: 480px; text-align: center; }
+  .badge { display: inline-block; background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.25); color: #ffb800; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 99px; padding: 0.25rem 0.75rem; margin-bottom: 1.25rem; }
+  h1 { font-size: 1.8rem; color: #fff; margin-bottom: 0.75rem; line-height: 1.25; }
+  .desc { color: #888; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; }
+  .price-box { background: #111; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; }
+  .price-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 0.4rem; }
+  .price-usd { font-size: 2.5rem; font-weight: 700; color: #fff; }
+  .price-usd span { font-size: 1.1rem; color: #888; }
+  .price-zys { font-size: 0.9rem; color: #ffb800; margin-top: 0.4rem; }
+  .price-zys .zys-amt { font-weight: 600; }
+  .live-dot { display: inline-block; width: 6px; height: 6px; background: #00c97f; border-radius: 50%; margin-right: 4px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .currency-note { font-size: 0.72rem; color: #555; margin-top: 0.5rem; }
+  form button { width: 100%; padding: 0.9rem; background: linear-gradient(135deg, #ffb800, #ff8c00); color: #000; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; }
+  form button:hover { opacity: 0.9; }
+  .footer-note { margin-top: 1.25rem; font-size: 0.75rem; color: #444; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="badge">ZYS Paywall</div>
+  <h1>{{productName}}</h1>
+  <p class="desc">{{productDesc}}</p>
+  <div class="price-box">
+    <div class="price-label">Price</div>
+    <div class="price-usd"><span>$</span>{{priceUsd}} <span>USD</span></div>
+    <div class="price-zys" id="zysLine">
+      <span class="live-dot"></span>
+      <span class="zys-amt" id="zysAmt">{{priceZys}}</span> ZYS
+    </div>
+    <div class="currency-note">Zephyr Yield Stable · yield-bearing · live rate</div>
+  </div>
+  <form method="POST" action="/pay">
+    <button type="submit">Buy Now →</button>
+  </form>
+  <p class="footer-note">You'll receive a one-time download link after payment is confirmed on-chain.</p>
+</div>
+<script>
+async function refreshRate() {
+  try {
+    const r = await fetch('/api/zys-rate');
+    const d = await r.json();
+    if (d.zysToUsd) {
+      const priceUsd = {{priceUsd}};
+      const zys = (priceUsd / d.zysToUsd).toFixed(4);
+      document.getElementById('zysAmt').textContent = zys;
+    }
+  } catch {}
+}
+setInterval(refreshRate, 60000);
+</script>
+</body>
+</html>
