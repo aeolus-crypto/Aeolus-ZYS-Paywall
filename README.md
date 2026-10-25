@@ -1,3 +1,5 @@
+Donations ZEPHYR3PJsb6tRPaxpRhtJ59RiahAYVH44JVigcLEReZ2W3VFss9tuRjjMGHVWQoEdi81226rxgPxMk1ESCgNvzQRj1TB4vwaaE2T
+
 # ZYS Paywall — Setup Guide
 
 Sell any digital file for **ZYS (Zephyr Yield Stable)** with no middlemen. Payments are confirmed on-chain. Buyers get a one-time download link automatically.
@@ -164,3 +166,5 @@ https://something.trycloudflare.com
 Share that link with buyers. The URL changes each time you restart, so keep the tunnel running while your store is open.
 
 > 💡 You can also use an actual custom domain with a named Cloudflare tunnel for a permanent URL.
+
+Donations ZEPHYR3PJsb6tRPaxpRhtJ59RiahAYVH44JVigcLEReZ2W3VFss9tuRjjMGHVWQoEdi81226rxgPxMk1ESCgNvzQRj1TB4vwaaE2T
