@@ -1,4 +1,4 @@
-Donations ZEPHYR3PJsb6tRPaxpRhtJ59RiahAYVH44JVigcLEReZ2W3VFss9tuRjjMGHVWQoEdi81226rxgPxMk1ESCgNvzQRj1TB4vwaaE2T
+Donations ZEPHYR38oDGYLyrSoYdbCKQnZkKf6UoV96wsqcWQM2u59pjmmAAwQNdWosZ4xd6erpFsQa6ubxzfZ3FYJHhv2qSqGbWM79DRR7W44
 
 # ZYS Paywall — Setup Guide
 
@@ -167,4 +167,4 @@ Share that link with buyers. The URL changes each time you restart, so keep the 
 
 > 💡 You can also use an actual custom domain with a named Cloudflare tunnel for a permanent URL.
 
-Donations ZEPHYR3PJsb6tRPaxpRhtJ59RiahAYVH44JVigcLEReZ2W3VFss9tuRjjMGHVWQoEdi81226rxgPxMk1ESCgNvzQRj1TB4vwaaE2T
+Donations ZEPHYR38oDGYLyrSoYdbCKQnZkKf6UoV96wsqcWQM2u59pjmmAAwQNdWosZ4xd6erpFsQa6ubxzfZ3FYJHhv2qSqGbWM79DRR7W44
